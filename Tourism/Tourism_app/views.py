@@ -8,3 +8,8 @@ def home(request):
 def about(request):
     data = Homepage_video.objects.all()
     return render(request,"about.html",{"data":data})
+
+
+def statepage(request):
+    return render(request,"state.html")
+
