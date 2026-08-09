@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link  href="{% static 'css/navbar.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="title">
+            <p>Home<span>-></span></p>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/gate-removebg-preview.png' %}">
+            </a>
+            
+        </div>
+        <h1>INCRIDBLE INDIA</h1>
+        <nav>
+        <select id="state">
+            <option value="">-- Select State --</option>
+            <option value="ap">Andhra Pradesh</option>
+            <option value="ts">Telangana</option>
+            <option value="ka">Karnataka</option>
+        </select>
+
+        <select id="tourist" disabled>
+            <option value="">-- Select Tourist Place --</option>
+            <option>Tirupati</option>
+            <option>Araku Valley</option>
+            <option>Visakhapatnam</option>
+        </select>
+        </nav>
+    </header>
+
+    <script>
+
+        const state = document.getElementById('state');
+        const tourist = document.getElementById('tourist');
+
+    state.addEventListener("change", function () {
+
+        if (state.value === "") {
+            tourist.disabled = true;
+        } else {
+            tourist.disabled = false;
+        }
+});
+    </script>
+</body>
+{% block body %}
+{% endblock %}
+</html>

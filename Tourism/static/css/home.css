@@ -1,0 +1,21 @@
+body{
+    background-image:url('static/images/gate_way.webp');    
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.img {
+   display:flex;
+   flex-direction: column;
+   margin-top:540px;
+   margin-left:45px;
+   align-items: center;
+   
+}
+
+.arrow {
+    width:150px;
+    cursor:pointer;
+}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% extends 'navbar.html' %}
+{% block body %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'CSS/about.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for item in data %}
+<div class="cont">
+        <img src="{{ item.image.url }}">
+</div>
+
+
+{% endfor %}
+
+</body>
+
+</html>
+{% endblock %}

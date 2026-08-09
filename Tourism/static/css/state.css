@@ -1,0 +1,11 @@
+body {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVoThMX0dQak2oECQ3j5b-a9PxvYsSM-RCM1Ho34BtLmpamZDXb36XDqA7&s=10);
+}
+
+.navbar {
+    border:1px solid black;
+}
+
+.navbar a{
+    border:1px solid black;
+}

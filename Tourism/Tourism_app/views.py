@@ -3,7 +3,7 @@ from .models import Homepage_video
 
 # Create your views here.
 def home(request):
-    return render(request,"Home.html")
+    return render(request,"home.html")
 
 def about(request):
     data = Homepage_video.objects.all()
