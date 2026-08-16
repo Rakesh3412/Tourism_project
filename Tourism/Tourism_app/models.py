@@ -14,4 +14,15 @@ class State(models.Model):
     State_img=models.ImageField(upload_to="State_image",null=True,blank=True)
     State_loc_img=models.ImageField(upload_to="State_loc_img",null=True,blank=True)
     State_video=models.FileField(upload_to="State_vedio",null=True,blank=True)
-    
+    def __str__(self):
+        return self.State_name
+
+class TourPlaces(models.Model):
+    Place_id=models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    State_name=models.ForeignKey(State,on_delete=models.CASCADE,related_name="State")
+    Place_name=models.CharField(max_length=70)
+    Place_description=models.TextField()
+    Place_img=models.ImageField(upload_to="Place_image",null=True,blank=True)
+    Place_loc_img=models.ImageField(upload_to="Place_loc_img",null=True,blank=True)
+    def __str__(self):
+        return self.Place_name
