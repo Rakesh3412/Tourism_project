@@ -15,24 +15,23 @@
         }
         body {
             min-height:100vh;
-            padding:10px;
-            
         }
 
         .image {
     position: relative;
     height: 450px;
     overflow: hidden;
-    border-radius: 20px;
+    
 }
 
 .image img {
-    width: 100%;
-    height: 100%;
+    width:100%;
     object-fit: cover;
     object-position: center;
+    overflow:hidden;
+    height:100%;
 }
-        .image::after {
+    .image::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -42,26 +41,266 @@
         rgba(0, 0, 0, 0.25),
         transparent
     );
+    
 }
-.img-txt p{
-    color:green;
-    padding:500px;
-    height:1000px;
-    background-color: red;
+
+.img-txt h1 {
+    color: white;
+    font-size: 60px;
+    margin: 10px 0;
+}
+
+.img-txt h3 {
+     color: #f5c16c;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+.img-txt {
+        position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 45%;
+    height: 100%;
+
+    padding:20px 40px;
+
+    color: white;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.img-txt p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section h1 {
+    padding:10px;
+    text-align: center;
+    color:#f5c16c;
+}
+
+
+.items {
+    padding:10px;
+    height:300px;
+    display:flex;
+    
+    flex-wrap:wrap;
+    gap:30px;
+    
+}
+
+.card {
+    overflow: hidden;
+    flex:1;
+    min-width: 200px;
+    height:100%;
+    box-shadow: 15px 18px 32px rgba(0, 0, 0, 0.25);
+    border-radius:5px;
+    border:none;
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.card-image {
+    width:100%;
+    overflow: hidden;
+    height: 100%;
+}
+.card-image img {
+    width:100%;
+    height:100%;
+
+}
+.card-text {
+    height:80%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+    width:80%;
+    margin-left: 20px;
+}
+.card-text span {
+    font-size: 30px;
+    color:rgb(11, 196, 213);
+}
+
+.details {
+    height:400px;
+    padding:20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+}
+
+.description {
+    padding:20px;
+    width:30%;
+    border:1px solid black;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.logo {
+    border:1px solid black;
+    height:100%;
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:20px;
+}
+
+.location {
+    width:60%;
+    height:100%;
+    border:1px solid black;
+    border-radius:10px;
+    box-shadow: 12px 22px 32px rgba(0, 0, 0, 0.75);
+    overflow:hidden;
+}
+.location img {
+    width:100%;
+    height:100%;
 }
     </style>
 </head>
 <body>
     <main>
         <div class="image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBB4LQTn0vRq4ydPLp-uTj_lEUHOHYWUU18JlCq5KuMw&s=10">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-iS_AwkuMG1a0CWmPa6F-iA52FVT8DK-Zc_HGzsMsXw&s=10">
             <div class="img-txt">
+                <h1>Andhra Pradesh</h1>
+                <h3>The land of kings</h3>
+
                 <p>Welcome to</p>
                 <p>Rajasthan</p>
                 <p>THE LAND OF KINGS</p>
                 <P>Rajasthan is a land of rich culture.</P>
             </div>
         </div>
+        
+        <section>
+            <h1>Best place to visit</h1>
+            <div class="items">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgvfPocDqVi-wSk5zVBZlrQyn1wPTbVcNzxCkjuMtsA&s=10">
+                    </div>
+                    <div class="card-text">
+                        <span>Jaipur</span>
+                        <p>The pink city known for its royal places, forts Andhra
+                            vibrant markets.
+                        </p>
+                    </div>
+
+                    
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgvfPocDqVi-wSk5zVBZlrQyn1wPTbVcNzxCkjuMtsA&s=10">
+                    </div>
+                    <div class="card-text">
+                        <span>Jaipur</span>
+                        <p>The pink city known for its royal places, forts Andhra
+                            vibrant markets.
+                        </p>
+                    </div>
+
+                    
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgvfPocDqVi-wSk5zVBZlrQyn1wPTbVcNzxCkjuMtsA&s=10">
+                    </div>
+                    <div class="card-text">
+                        <span>Jaipur</span>
+                        <p>The pink city known for its royal places, forts Andhra
+                            vibrant markets.
+                        </p>
+                    </div>
+
+                    
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgvfPocDqVi-wSk5zVBZlrQyn1wPTbVcNzxCkjuMtsA&s=10">
+                    </div>
+                    <div class="card-text">
+                        <span>Jaipur</span>
+                        <p>The pink city known for its royal places, forts Andhra
+                            vibrant markets.
+                        </p>
+                    </div>
+
+                    
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgvfPocDqVi-wSk5zVBZlrQyn1wPTbVcNzxCkjuMtsA&s=10">
+                    </div>
+                    <div class="card-text">
+                        <span>Jaipur</span>
+                        <p>The pink city known for its royal places, forts Andhra
+                            vibrant markets.
+                        </p>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="details">
+                <div class="description">
+                    <h2>About Rajsthan</h2>
+
+                    <p>rajasthan is India's largest
+                        state, known fot it's royal histroy
+                    </p>
+                    <div class="logo">
+                            <div>
+                                <p>logo</p>
+                            </div>
+
+                            <div>
+                                <p>logo</p>
+                            </div>
+
+                            <div>
+                                <p>logo</p>
+                            </div>
+                    </div>
+                    
+
+                </div>
+
+                <div class="location">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvoe3tPGihp_1UammQDxZFpv4Fzqw31qirEf_9fmQvMw&s=10">
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>

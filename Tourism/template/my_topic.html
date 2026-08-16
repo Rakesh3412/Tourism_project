@@ -1,0 +1,1757 @@
+
+{% extends 'navbar.html' %}
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore India - Rajasthan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Satisfy&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/rajasthan.css' %}">
+    <style>
+        /* =====================================================
+                     RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f5f0e7;
+    color: #101827;
+}
+
+
+/* =====================================================
+                     NAVBAR
+===================================================== */
+
+
+/* =====================================================
+                     SIDEBAR
+===================================================== */
+
+.sidebar {
+    position: fixed;
+
+    top: 55px;
+    left: 0;
+
+    width: 198px;
+
+    height: calc(100vh - 55px);
+
+    background: #03182c;
+
+    padding: 34px 16px 20px 26px;
+
+    color: white;
+
+    z-index: 900;
+
+    border-radius: 0 12px 12px 0;
+
+    overflow: hidden;
+}
+
+
+.sidebar h3 {
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+.sidebar select {
+    width: 100%;
+
+    height: 32px;
+
+    border-radius: 6px;
+
+    border: none;
+
+    padding: 0 10px;
+
+    background: white;
+
+    color: #182333;
+
+    margin-bottom: 17px;
+
+    outline: none;
+}
+
+
+/* STATE LIST */
+
+.state-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.state-list a {
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 12px;
+
+    padding: 9px 6px;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    transition: 0.3s;
+}
+
+
+.state-list a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+
+.state-list a.selected {
+    background: rgba(255,255,255,0.12);
+
+    color: #e9a51a;
+}
+
+
+.state-list span {
+    font-size: 17px;
+    color: #b7a88b;
+}
+
+
+.state-list a.selected span {
+    color: #e9a51a;
+}
+
+
+.sidebar-art {
+    position: absolute;
+
+    bottom: 8px;
+    left: 20px;
+
+    color: #d39216;
+
+    font-size: 28px;
+
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+                    MAIN CONTENT
+===================================================== */
+
+.main-content {
+    margin-left: 198px;
+
+    padding-top: 55px;
+}
+
+
+/* =====================================================
+                       HERO
+===================================================== */
+
+.hero {
+    height: 370px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(2,18,34,0.96) 0%,
+            rgba(2,18,34,0.75) 28%,
+            rgba(2,18,34,0.2) 65%,
+            rgba(2,18,34,0) 100%
+        );
+}
+
+
+.hero-content {
+    position: absolute;
+
+    left: 40px;
+    top: 58px;
+
+    max-width: 430px;
+
+    color: white;
+}
+
+
+.welcome {
+    font-family: "Satisfy", cursive;
+
+    font-size: 20px;
+
+    color: #e9a51a;
+
+    margin-bottom: 2px;
+}
+
+
+.hero-content h1 {
+    font-family: "Satisfy", cursive;
+
+    font-size: 66px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    color: #e9a51a;
+
+    margin-bottom: 17px;
+}
+
+
+.hero-content h2 span {
+    margin-left: 7px;
+}
+
+
+.hero-description {
+    font-size: 13px;
+
+    line-height: 1.65;
+
+    max-width: 400px;
+}
+
+
+
+
+
+/* =====================================================
+                 SECTION HEADING
+===================================================== */
+
+.section-heading {
+    text-align: center;
+
+    margin: 34px 0 15px;
+}
+
+
+.section-heading h2,
+.explore-box h2,
+.videos-box h2,
+.location-section h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+
+    color: #102b4c;
+}
+
+
+.gold-line {
+    width: 75px;
+
+    height: 2px;
+
+    background: #d49a2c;
+
+    margin: 8px auto;
+
+    position: relative;
+}
+
+
+.gold-line::before,
+.gold-line::after {
+    content: "";
+
+    position: absolute;
+
+    top: -3px;
+
+    width: 6px;
+    height: 6px;
+
+    border: 1px solid #d49a2c;
+
+    transform: rotate(45deg);
+}
+
+
+.gold-line::before {
+    left: 15px;
+}
+
+
+.gold-line::after {
+    right: 15px;
+}
+
+
+/* =====================================================
+                 TOURIST PLACES
+===================================================== */
+
+.tourist-wrapper {
+    position: relative;
+
+    padding: 0 34px;
+}
+
+
+.tourist-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.place-card {
+    background: #fff;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+
+    min-width: 0;
+}
+
+
+.place-card img {
+    width: 100%;
+
+    height: 120px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.place-content {
+    padding: 12px 14px 14px;
+}
+
+
+.place-content h3 {
+    font-size: 13px;
+
+    margin-bottom: 9px;
+
+    color: #101827;
+}
+
+
+.place-content h3 i {
+    margin-right: 7px;
+}
+
+
+.place-content p {
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    min-height: 53px;
+}
+
+
+.small-line {
+    display: block;
+
+    width: 35px;
+
+    height: 2px;
+
+    background: #d59b2c;
+
+    margin-top: 8px;
+}
+
+
+/* SLIDER BUTTON */
+
+.slider-btn {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #03182c;
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+
+.slider-btn.left {
+    left: 0;
+}
+
+
+.slider-btn.right {
+    right: 0;
+}
+
+
+/* =====================================================
+                 LOWER SECTION
+===================================================== */
+
+.lower-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 18px;
+
+    padding: 25px 28px;
+}
+
+
+/* EXPLORE */
+
+.explore-box {
+    background: #f9f2e6;
+
+    border-radius: 9px;
+
+    padding: 17px 25px;
+}
+
+
+.explore-box h2 {
+    margin-bottom: 0;
+}
+
+
+.explore-box .gold-line {
+    margin-left: 70px;
+}
+
+
+.explore-item {
+    display: flex;
+
+    gap: 14px;
+
+    margin: 14px 0;
+
+    position: relative;
+}
+
+
+.explore-icon {
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: #09233d;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.explore-item h3 {
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+
+.explore-item p {
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+                    VIDEOS
+===================================================== */
+
+.videos-box {
+    background: #faf7f1;
+
+    border-radius: 9px;
+
+    padding: 17px 15px;
+
+    box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+}
+
+
+.video-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+}
+
+
+.video-heading .gold-line {
+    margin-left: 0;
+}
+
+
+.video-heading a {
+    text-decoration: none;
+
+    color: #071c32;
+
+    font-size: 11px;
+
+    margin-top: 7px;
+}
+
+
+.video-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-top: 8px;
+}
+
+
+.video-image {
+    position: relative;
+
+    height: 145px;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+
+.video-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.play {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 40px;
+    height: 40px;
+
+    background: rgba(255,255,255,0.9);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.play i {
+    color: #111;
+
+    font-size: 15px;
+
+    margin-left: 2px;
+}
+
+
+.duration {
+    position: absolute;
+
+    right: 5px;
+    bottom: 5px;
+
+    background: rgba(0,0,0,0.75);
+
+    color: white;
+
+    padding: 2px 4px;
+
+    font-size: 9px;
+
+    border-radius: 2px;
+}
+
+
+.video-card h3 {
+    font-size: 11px;
+
+    margin-top: 8px;
+}
+
+
+.video-card p {
+    font-size: 9px;
+
+    margin-top: 5px;
+
+    color: #555;
+}
+
+
+/* =====================================================
+                     LOCATION
+===================================================== */
+
+.location-section {
+    margin: 0 28px 18px;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    min-height: 265px;
+
+    background: #f8f4eb;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 7px rgba(0,0,0,0.08);
+}
+
+
+.location-info {
+    padding: 20px 20px 15px;
+
+    background: #faf7ef;
+}
+
+
+.location-info h2 {
+    text-align: center;
+}
+
+
+.location-info .gold-line {
+    margin-bottom: 18px;
+}
+
+
+.location-card {
+    background: #f5e4c5;
+
+    padding: 15px;
+
+    border-radius: 8px;
+}
+
+
+.location-card h3 {
+    font-size: 11px;
+
+    margin-bottom: 12px;
+}
+
+
+.location-card h3 i {
+    margin-right: 8px;
+}
+
+
+.location-card p {
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+
+.map-button {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    text-decoration: none;
+
+    background: #071d33;
+
+    color: white;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+}
+
+
+/* MAP */
+
+.map {
+    position: relative;
+
+    min-height: 265px;
+
+    background:
+        linear-gradient(
+            rgba(228,225,205,0.7),
+            rgba(228,225,205,0.7)
+        ),
+        url("https://tile.openstreetmap.org/6/48/26.png");
+
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+
+/* Rajasthan shape approximation */
+
+.map::before {
+    content: "";
+
+    position: absolute;
+
+    width: 310px;
+    height: 180px;
+
+    left: 25%;
+    top: 42px;
+
+    background: rgba(245,211,151,0.55);
+
+    border: 1.5px solid #8b5b20;
+
+    clip-path: polygon(
+        10% 20%,
+        35% 5%,
+        62% 10%,
+        82% 25%,
+        95% 42%,
+        78% 60%,
+        86% 75%,
+        63% 82%,
+        45% 95%,
+        30% 78%,
+        12% 82%,
+        5% 60%
+    );
+}
+
+
+.map-label {
+    position: absolute;
+
+    left: 48%;
+    top: 105px;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 18px;
+}
+
+
+.map-label i {
+    font-size: 30px;
+
+    color: #071d33;
+}
+
+
+.map-place {
+    position: absolute;
+
+    font-size: 11px;
+}
+
+
+.punjab {
+    top: 20px;
+    left: 48%;
+}
+
+
+.haryana {
+    top: 52px;
+    right: 18%;
+}
+
+
+.gujarat {
+    bottom: 20px;
+    left: 20%;
+}
+
+
+.mp {
+    bottom: 17px;
+    right: 28%;
+}
+
+
+.pakistan {
+    top: 55px;
+    left: 10%;
+}
+
+
+.up {
+    top: 83px;
+    right: 6%;
+}
+
+
+.map-controls {
+    position: absolute;
+
+    right: 12px;
+    bottom: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.map-controls button {
+    width: 30px;
+    height: 30px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+                      FOOTER
+===================================================== */
+
+footer {
+    min-height: 55px;
+
+    background: #03182c;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+footer span {
+    color: #e1a029;
+}
+
+
+/* =====================================================
+                    RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .main-content {
+        margin-left: 180px;
+    }
+
+    .tourist-container {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        width: auto;
+    }
+
+    .search-box {
+        width: 180px;
+    }
+
+    .info-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lower-section {
+        grid-template-columns: 1fr;
+    }
+
+    .location-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .search-box {
+        width: 140px;
+    }
+
+    .hero {
+        height: 430px;
+    }
+
+    .hero-content {
+        left: 25px;
+        top: 55px;
+        right: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .info-bar {
+        margin: 0 15px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .info-item {
+        border-right: none;
+
+        border-bottom: 1px solid #e2d4bd;
+    }
+
+    .tourist-container {
+        grid-template-columns: 1fr;
+    }
+
+    .lower-section {
+        padding: 20px 15px;
+    }
+
+    .location-section {
+        margin: 0 15px 18px;
+    }
+
+    .video-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+.tourist-section {
+   
+    border-radius: 10px;
+    padding-bottom: 15px;
+    background-color: #faf7f1;
+}
+    </style>
+</head>
+
+<body>
+
+
+
+<!-- =====================================================
+                    LEFT SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <h3>SELECT STATE</h3>
+
+
+    <select>
+        <option>Rajasthan</option>
+        <option>Kerala</option>
+        <option>Himachal Pradesh</option>
+        <option>Uttarakhand</option>
+        <option>Goa</option>
+        <option>Tamil Nadu</option>
+        <option>Karnataka</option>
+        <option>Maharashtra</option>
+        <option>Gujarat</option>
+        <option>West Bengal</option>
+    </select>
+
+
+    <div class="state-list">
+
+        <a href="#" class="selected">
+            <span>♔</span>
+            Rajasthan
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Kerala
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Himachal Pradesh
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Uttarakhand
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Goa
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Tamil Nadu
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Karnataka
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Maharashtra
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            Gujarat
+        </a>
+
+        <a href="#">
+            <span>♜</span>
+            West Bengal
+        </a>
+
+    </div>
+
+
+    <div class="sidebar-art">
+        🐪 🏰
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+                    MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+<!-- =====================================================
+                    HERO SECTION
+===================================================== -->
+
+<section class="hero">
+
+    <img src="{% static 'images/rajasthan.jpg' %}"
+         class="hero-image"
+         alt="Rajasthan">
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <p class="welcome">
+            Welcome to
+        </p>
+
+        <h1>
+            Rajasthan
+        </h1>
+
+        <h2>
+            THE LAND OF KINGS
+            <span>♔ 🐪</span>
+        </h2>
+
+        <p class="hero-description">
+
+            Rajasthan is a land of rich culture, heritage and royal
+            history. Known for its magnificent palaces, majestic
+            forts, golden deserts, vibrant festivals and warm
+            hospitality, Rajasthan is one of India's most
+            popular tourist destinations.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    INFORMATION BAR
+===================================================== -->
+
+
+<!-- =====================================================
+                 TOURIST PLACES
+===================================================== -->
+
+<section class="tourist-section">
+
+    <div class="section-heading">
+
+        <h2>
+            TOP TOURIST PLACES
+        </h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <div class="tourist-wrapper">
+
+        <button class="slider-btn left">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+
+        <div class="tourist-container">
+
+
+            <!-- CARD 1 -->
+
+            <article class="place-card">
+
+                <img src="{% static 'images/jaipur.jpg' %}"
+                     alt="Jaipur">
+
+                <div class="place-content">
+
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Jaipur
+                    </h3>
+
+                    <p>
+                        The Pink City famous for its palaces,
+                        forts & vibrant bazaars.
+                    </p>
+
+                    <span class="small-line"></span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 2 -->
+
+            <article class="place-card">
+
+                <img src="{% static 'images/jodhpur.jpg' %}"
+                     alt="Jodhpur">
+
+                <div class="place-content">
+
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Jodhpur
+                    </h3>
+
+                    <p>
+                        The Blue City known for the mighty
+                        Mehrangarh Fort.
+                    </p>
+
+                    <span class="small-line"></span>
+
+                </div>
+            
+            </article>
+
+
+
+            <!-- CARD 3 -->
+
+            <article class="place-card">
+
+                <img src="{% static 'images/udaipur.jpg' %}"
+                     alt="Udaipur">
+
+                <div class="place-content">
+
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Udaipur
+                    </h3>
+
+                    <p>
+                        The City of Lakes and beautiful
+                        royal palaces.
+                    </p>
+
+                    <span class="small-line"></span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 4 -->
+
+            <article class="place-card">
+
+                <img src="{% static 'images/jaisalmer.jpg' %}"
+                     alt="Jaisalmer">
+
+                <div class="place-content">
+
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Jaisalmer
+                    </h3>
+
+                    <p>
+                        The Golden City and stunning desert
+                        landscapes.
+                    </p>
+
+                    <span class="small-line"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 5 -->
+
+            <article class="place-card">
+
+                <img src="{% static 'images/pushkar.jpg' %}"
+                     alt="Pushkar">
+
+                <div class="place-content">
+
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Pushkar
+                    </h3>
+
+                    <p>
+                        Famous for Pushkar Lake and
+                        Brahma Temple.
+                    </p>
+
+                    <span class="small-line"></span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <button class="slider-btn right">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                EXPLORE + VIDEOS
+===================================================== -->
+
+<section class="lower-section">
+
+
+<!-- EXPLORE -->
+
+<div class="explore-box">
+
+    <h2>
+        EXPLORE RAJASTHAN
+    </h2>
+
+    <div class="gold-line"></div>
+
+
+    <div class="explore-item">
+
+        <div class="explore-icon">
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Culture & Heritage
+            </h3>
+
+            <p>
+                Experience the royal heritage, colorful
+                festivals, folk music, dance and traditions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="explore-item">
+
+        <div class="explore-icon">
+            <i class="fa-solid fa-camel"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Adventure & Desert Safari
+            </h3>
+
+            <p>
+                Enjoy thrilling desert safaris, camel rides,
+                paramotoring and camping.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="explore-item">
+
+        <div class="explore-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Food & Shopping
+            </h3>
+
+            <p>
+                Taste the royal Rajasthani cuisine and shop
+                handicrafts, textiles and jewelry.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="explore-item">
+
+        <div class="explore-icon">
+            <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Fairs & Festivals
+            </h3>
+
+            <p>
+                Pushkar Fair, Desert Festival, Teej,
+                Gangaur and many more.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- VIDEOS -->
+
+<div class="videos-box">
+
+    <div class="video-heading">
+
+        <div>
+
+            <h2>VIDEOS</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <a href="#">
+            View All →
+        </a>
+
+    </div>
+
+
+    <div class="video-container">
+
+
+        <!-- VIDEO 1 -->
+
+        <div class="video-card">
+
+            <div class="video-image">
+
+                <img src="{% static 'images/video1.jpg' %}"
+                     alt="Rajasthan Travel">
+
+                <div class="play">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <span class="duration">
+                    8:45
+                </span>
+
+            </div>
+
+            <h3>
+                Rajasthan Travel Guide
+            </h3>
+
+            <p>
+                12K views · 2 months ago
+            </p>
+
+        </div>
+
+
+
+        <!-- VIDEO 2 -->
+
+        <div class="video-card">
+
+            <div class="video-image">
+
+                <img src="{% static 'images/video2.jpg' %}"
+                     alt="Jaisalmer">
+
+                <div class="play">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <span class="duration">
+                    6:32
+                </span>
+
+            </div>
+
+            <h3>
+                Jaisalmer Desert Safari
+            </h3>
+
+            <p>
+                8.5K views · 1 month ago
+            </p>
+
+        </div>
+
+
+
+        <!-- VIDEO 3 -->
+
+        <div class="video-card">
+
+            <div class="video-image">
+
+                <img src="{% static 'images/video3.jpg' %}"
+                     alt="Udaipur">
+
+                <div class="play">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+
+                <span class="duration">
+                    7:15
+                </span>
+
+            </div>
+
+            <h3>
+                Udaipur - City of Lakes
+            </h3>
+
+            <p>
+                10K views · 3 months ago
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+                     LOCATION
+===================================================== -->
+
+<section class="location-section">
+
+    <div class="location-info">
+
+        <h2>
+            LOCATION
+        </h2>
+
+        <div class="gold-line"></div>
+
+
+        <div class="location-card">
+
+            <h3>
+                <i class="fa-solid fa-location-dot"></i>
+                Rajasthan, India
+            </h3>
+
+            <p>
+
+                Rajasthan is located in the northwestern
+                part of India. It shares its border with
+                Punjab, Haryana, Uttar Pradesh, Madhya
+                Pradesh, Gujarat and Pakistan.
+
+            </p>
+
+            <a href="#" class="map-button">
+
+                Open in Google Maps
+
+                <i class="fa-regular fa-map"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="map">
+
+        <div class="map-label">
+
+            <strong>
+                RAJASTHAN
+            </strong>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+        </div>
+
+        <div class="map-place punjab">
+            Punjab
+        </div>
+
+        <div class="map-place haryana">
+            Haryana
+        </div>
+
+        <div class="map-place gujarat">
+            Gujarat
+        </div>
+
+        <div class="map-place mp">
+            Madhya Pradesh
+        </div>
+
+        <div class="map-place pakistan">
+            Pakistan
+        </div>
+
+        <div class="map-place up">
+            Uttar Pradesh
+        </div>
+
+        <div class="map-controls">
+
+            <button>+</button>
+            <button>−</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+<!-- =====================================================
+                     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        “Some journeys are in search of the unknown,
+        Rajasthan is in search of your soul.”
+    </p>
+
+    <span>
+        🐪 🏰
+    </span>
+
+</footer>
+{% endblock %}
+</body>
+</html>

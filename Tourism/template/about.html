@@ -12,10 +12,15 @@
 </head>
 <body>
     {% for item in data %}
-<div class="cont">
-        <img src="{{ item.image.url }}">
-</div>
+<div class="video-container">
 
+    <video autoplay muted loop playsinline>
+        <source src="/static/videos/opening_video.mp4" type="video/mp4">
+    </video>
+
+    
+
+</div>
 
 {% endfor %}
 
